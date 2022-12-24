@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css?family=Acme|Lobster|Patua+One|Rubik|Sniglet");
+
+
+:root {
+  --Sniglet-font: "Sniglet", cursive;
+  --Rubik: "Rubik", cursive;
+  --light-black: #2e2c2caf;
+  --bggradient: linear-gradient(62deg, #000000 0%, #353535 100%);;
+
+}
+
+.header-home .row .col-md-7 {
+  padding: 22vmin 1vmin;
+  padding-bottom: 35vmin;
+}
+
+.header-home .row .col-md-5 {
+  padding: 4.2vmin 1vmin;
+}
+
+.header-home {
+  background: #000000;
+  background: var(--bggradient);
+}
+
+.header-home .container .col-md-7 {
+  font-family: "Rubik", sans-serif;
+}
+
+.header-home .container .col-md-7 h1 {
+  font-size: 8.5vmin;
+  font-weight: bold;
+  padding: 0.1em 0em;
+}
+
+.header-home .container .col-md-7 p {
+  padding: 1vmin 5vmin;
+}
+
+.primary-btn {
+  border-radius: 30px;
+  font-weight: bold;
+}
