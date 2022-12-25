@@ -10,7 +10,7 @@ const Sidebar = () => {
 
   return (
     <main className={show ? 'space-toggle' : null}>
-      <header className={`headersidebar  ${show ? 'space-toggle' : null}`}>
+      <header className={`headersidebar ${show ? 'space-toggle' : null}`}>
         <div className='header-toggle' onClick={() => setShow(!show)}>
           <i className={`fas fa-bars ${show ? 'fa-solid fa-xmark' : null}`}></i>
         </div>
@@ -23,7 +23,7 @@ const Sidebar = () => {
       <aside className={`sidebar ${show ? 'show' : null}`}>
         <nav className='nav'>
           <div>
-            <Link to='/' className={`${show ? 'nav-logoshow' : "nav-logo" } `}>
+            <Link to='/dashboard' className={`${show ? 'nav-logoshow' : "nav-logo" } `}>
               <i className={`nav-link-icon`}> <img className='imglogo' src={profile} alt="" /> </i>
               { show && <span className='nav-logo-name'>Waqar Akhtar</span>}
             </Link>
@@ -33,22 +33,15 @@ const Sidebar = () => {
                 <i className='fas fa-tachometer-alt nav-link-icon'></i>
                 <span className='nav-link-name'>Dashboard</span>
               </Link>
-              <Link to='/hotel' className='nav-link'>
+              <Link to='/activities' className='nav-link'>
                 <i className='fas fa-hotel nav-link-icon'></i>
                 <span className='nav-link-name'>Activities</span>
               </Link>
-              <Link to='/gallery' className='nav-link'>
-                <i className='fas fa-image nav-link-icon'></i>
-                <span className='nav-link-name'>Gallery</span>
-              </Link>
-              <Link to='/gallery' className='nav-link'>
-                <i className='fas fa-dollar-sign nav-link-icon'></i>
-                <span className='nav-link-name'>Transaction</span>
-              </Link>
+              
             </div>
           </div>
 
-          <Link to='/logout' className='nav-link'>
+          <Link to='/home' className='nav-link'>
             <i className='fas fa-sign-out nav-link-icon'></i>
             <span className='nav-link-name'>Logout</span>
           </Link>

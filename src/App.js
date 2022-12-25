@@ -9,17 +9,17 @@ import {
 import LogIn from './components/LogIn';
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
-import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/Dashboard/Dashboard';
 const App = () => {
   return (
     <>
     <Router>
-          <Navbar/>
+          {/* <Navbar/> */}
             <Routes>
-                <Route exact path = "/" element ={<Home/>} /> 
+                {/* <Route exact path = "/" element ={<Home/>} /> 
                 <Route exact path = "/signup" element ={<SignUp/>} /> 
-                <Route exact path = "/login" element ={<LogIn/>} />  
-                 {/* <Route exact path = "/dashboard" element ={<Dashboard/>} /> */}
+                <Route exact path = "/login" element ={<LogIn/>} />   */}
+                 <Route exact path = "/dashboard" element ={<Dashboard/>} />
             </Routes>
       
         
