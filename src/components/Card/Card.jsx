@@ -1,11 +1,20 @@
 import React from "react";
 import './card.css'
 import logo from "../../image/logo.png"
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 const Card = () => {
   return (
     <>
       <div class="card" style={{width: "18rem"}}>
+      <div className="editandtrash">
+            <div className="timer">
+                <i className='fas fa-edit card-icon'></i>
+            </div>
+            <div className="timer">
+                <i className='fas fa-trash-alt card-icon'></i>
+            </div>
+
+          </div>
         <img src={logo} class="card-img-top" alt="activities" />
         <div class="card-body">
           <h5 class="card-title">Bi CycleRide</h5>

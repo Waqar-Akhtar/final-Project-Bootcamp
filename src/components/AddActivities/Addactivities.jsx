@@ -1,64 +1,85 @@
-import React from 'react'
-import './addactivities.css'
+import React, { useState } from "react";
+import "./addactivities.css";
 const Addactivities = (props) => {
+    const [duration, setDuration] = useState()
+    const [description, setDescription] = useState()
+    const [date, setDate] = useState()
+    const [activity, setActivity] = useState("")
+
+    const handleclick= ()=>{
+        console.log(duration)
+        console.log(description)
+        console.log(date)
+        console.log(activity)
+    }
   return (
     <>
       <div className="activities-container">
         <div className="activities-sub-container">
-        <div class="activities-container2">
+          <div className="activities-container2">
             <div className="crossbtn">
-                <li onClick={props.onclick} className='fa-solid fa-xmark bg-success px-2'></li>
-
+              <li
+                onClick={props.onclick}
+                className="fa-solid fa-xmark bg-success px-2"
+              ></li>
             </div>
-        <div class="text">Add Activities</div>
-        <form action="#">
-           <div class="form-row">
-              <div class="input-data">
-                <select id="activities" >
-                    <option value="" disabled selected hidden>Activities</option>
+            <div className="text">Add Activities</div>
+            <form action="#">
+              <div className="form-row">
+                <div className="input-data">
+                  <select id="activities" onChange={(e)=>{
+                    const activities1 = e.target.value;
+                    setActivity(activities1)
+                  }}>
+                    {/* <option value="" disabled selected hidden>
+                      Activities
+                    </option> */}
                     <option value="Run">Run</option>
                     <option value="Bicycle Ride">Bicycle Ride</option>
-                    <option value="Swim" selected>Swim</option>
-                    <option value="Walk" selected>Walk</option>
-                    <option value="Hike " selected>Hike</option>
-                 
-                </select>
-                 <div class="underline"></div>
-                 {/* <label for="activities"></label> */}
+                    <option value="Swim" selected>
+                      Swim
+                    </option>
+                    <option value="Walk" selected>
+                      Walk
+                    </option>
+                    <option value="Hike " selected>
+                      Hike
+                    </option>
+                  </select>
+                  <div className="underline"></div>
+                </div>
+                <div className="input-data">
+                  <input type="date" value={date} onChange = {(e)=>setDate(e.target.value)} required />
+                  <div className="underline"></div>
+                </div>
               </div>
-              <div class="input-data">
-                 <input type="date" required/>
-                 <div class="underline"></div>
-                 {/* <label for="">Date</label> */}
+              <div className="form-row">
+                <div className="input-data duration">
+                  <input type="text" required value={duration} onChange = {(e)=>setDuration(e.target.value)} />
+                  <div className="underline"></div>
+                  <label for="">Duration</label>
+                </div>
               </div>
-           </div>
-           <div class="form-row">
-              <div class="input-data duration">
-                 <input type="text" required/>
-                 <div class="underline"></div>
-                 <label for="">Duration</label>
-              </div>
-           </div>
-           <div class="form-row">
-              <div class="input-data textarea">
-                 <textarea rows="8" cols="80" required></textarea>
-                 <br />
-                 <div class="underline"></div>
-                 <label for="">Description</label>
-                 <br />
-                 <div class="form-row submit-btn">
-                    <div class="add-button">
-                      <button className='btn btn-success w-100'>ADD</button>
+              <div className="form-row">
+                <div className="input-data textarea">
+                  <textarea rows="8" cols="80" required value={description} onChange = {(e)=>setDescription(e.target.value)} ></textarea>
+                  <br />
+                  <div className="underline"></div>
+                  <label for="">Description</label>
+                  <br />
+                  <div className="form-row submit-btn">
+                    <div className="add-button">
+                      <button className="btn btn-success w-100" onClick={handleclick}>ADD</button>
                     </div>
-                 </div>
+                  </div>
+                </div>
               </div>
-           </div>
-        </form>
-     </div>
-         </div>
+            </form>
+          </div>
         </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Addactivities
+export default Addactivities;
