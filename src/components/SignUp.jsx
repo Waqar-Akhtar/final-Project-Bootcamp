@@ -5,21 +5,48 @@ import { RiLockPasswordFill } from 'react-icons/ri';
 import { MdPassword } from 'react-icons/md';
 import { CgMail } from 'react-icons/cg';
 import running from '../image/running.png'
+
+
 import {
   Link, useNavigate
 } from "react-router-dom"
+import Navbar from './Navbar/Navbar';
+
 const SignUp = () => {
     const [name, setName] = useState()
     const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
-    const [cpassword, setCpassword] = useState()
+    const [Password, setPassword] = useState()
+    const [cPassword, setCpassword] = useState()
     const navigator = useNavigate()
 
-    const Registration = ()=>{
-      navigator("/login")
+    const Registration= async ()=>{
+      const res= await fetch("/user/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name , email , Password, cPassword
+        })
+       
+      } );
+      const data = await res.json(); 
+
+          if(res.status ===500){
+            window.alert("Internal Server error")
+          }else if(res.status === 403){
+            window.alert("Email Already In-Use")
+          } else if(res.status === 410){
+            window.alert("password and confirm password are not same")
+          }else {
+        window.alert('Register Successfully')
+        navigator('/login')
+      }
     }
+    
   return (
     <>
+    <Navbar/>
       <section className="vh-100 "  style={{backgroundColor: "#151515"}}>
         <div className="container h-100 d-flex justify-content-center align-items-center" >
           <div className="row d-flex justify-content-center align-items-center h-100">
@@ -32,7 +59,7 @@ const SignUp = () => {
                         Sign Up
                       </p>
 
-                      <form className="mx-1 mx-md-4">
+                      <form method="POST" className="mx-1 mx-md-4">
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i style={{fontSize: "25px"}} className=" mt-3 me-3 "><RiContactsFill /></i>
                           <div className="form-outline flex-fill mb-0">
@@ -46,7 +73,7 @@ const SignUp = () => {
                               onChange={(e)=>setName(e.target.value)}
                               value = {name}
                               placeholder = "Waqar Akhtar"
-                              required = "true"
+                              required
                             />
                            
                           </div>
@@ -65,6 +92,7 @@ const SignUp = () => {
                               onChange={(e)=>setEmail(e.target.value)}
                               value = {email}
                               placeholder = "abc@gmail.com"
+                              required
                             />
                            
                           </div>
@@ -81,8 +109,9 @@ const SignUp = () => {
                               id="form3Example4c"
                               className="form-control"
                               onChange={(e)=>setPassword(e.target.value)}
-                              value = {password}
+                              value = {Password}
                               placeholder = "***********"
+                              required
                             />
                          
                           </div>
@@ -99,8 +128,9 @@ const SignUp = () => {
                               id="form3Example4cd"
                               className="form-control"
                               onChange={(e)=>setCpassword(e.target.value)}
-                              value={cpassword}
+                              value={cPassword}
                               placeholder = "***********"
+                              required
                             />
                             
                           </div>

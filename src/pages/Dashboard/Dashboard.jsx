@@ -4,29 +4,27 @@ import Button from '../../components/Button/Button'
 import Card from '../../components/Card/Card'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import './dashboard.css'
+import { useSelector, useDispatch } from "react-redux";
 
 const Dashboard = () => {
+  const myState = useSelector((store)=> store.dataReducer.data)
+  
   const [show, setShow] = useState(false)
   const addactivitiesForm = ()=>{
     setShow(!show)
   }
   return (
     <>
-      <Sidebar/>
+    
+      <Sidebar username = {myState.user.name}/>
       <div className='dashboardBackground'>
         <div className=" dashboardContainer">
           <Button onclick = {addactivitiesForm}/>
           <div className="cardrow">
-          <Card />
+          debugger;
+          <Card tokenAuthorization ={myState.token}/>
           <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
+         
 
           </div>
         </div>

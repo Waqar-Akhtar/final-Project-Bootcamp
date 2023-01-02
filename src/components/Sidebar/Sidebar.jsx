@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import profile from '../../image/profile.jpg'
 import logo from '../../image/logo.png'
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   const [show, setShow] = useState(false);
 
   return (
@@ -25,7 +25,7 @@ const Sidebar = () => {
           <div>
             <Link to='/dashboard' className={`${show ? 'nav-logoshow' : "nav-logo" } `}>
               <i className={`nav-link-icon`}> <img className='imglogo' src={profile} alt="" /> </i>
-              { show && <span className='nav-logo-name'>Waqar Akhtar</span>}
+              { show && <span className='nav-logo-name'>{props.username}</span>}
             </Link>
 
             <div className='nav-list'>

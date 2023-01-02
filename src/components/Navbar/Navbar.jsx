@@ -9,9 +9,9 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-lg position: sticky navbar-dark bg-dark">
         <div className="container-fluid mx-5">
-          <Link className="navbar-brand" to="/">
+          <a className="navbar-brand" href="#header-home">
           <img className="logo" src={logo} alt="logo" />
-          </Link>
+          </a>
           <button
             className="navbar-toggler"
             type="button"

@@ -1,16 +1,34 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import "./addactivities.css";
+
 const Addactivities = (props) => {
+  const myState = useSelector((store)=> store.dataReducer.data)
     const [duration, setDuration] = useState()
     const [description, setDescription] = useState()
     const [date, setDate] = useState()
     const [activity, setActivity] = useState("")
 
-    const handleclick= ()=>{
-        console.log(duration)
-        console.log(description)
-        console.log(date)
-        console.log(activity)
+
+    const AddActivity= async ()=>{
+      console.log(props.tokenAuthorization)
+      // const res = await fetch('/activities/create',{
+      //   method: "POST",
+      //   headers: {
+      //     // Accept: 'application/json',
+      //     "Content-Type": "application/json",
+      //     Authorization: `Bearer ${props.tokenAuthorization}`
+      //   },
+      //   body: JSON.stringify({
+      //     duration,
+      //     description,
+      //     date,
+      //     activity
+      //   })
+        
+      // })
+      // const data = await res.json()
+      // console.log(data)
     }
   return (
     <>
@@ -24,7 +42,7 @@ const Addactivities = (props) => {
               ></li>
             </div>
             <div className="text">Add Activities</div>
-            <form action="#">
+            <form >
               <div className="form-row">
                 <div className="input-data">
                   <select id="activities" onChange={(e)=>{
@@ -69,7 +87,7 @@ const Addactivities = (props) => {
                   <br />
                   <div className="form-row submit-btn">
                     <div className="add-button">
-                      <button className="btn btn-success w-100" onClick={handleclick}>ADD</button>
+                      <button className="btn btn-success w-100" onClick={()=>AddActivity()}>ADD</button>
                     </div>
                   </div>
                 </div>

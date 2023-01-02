@@ -5,7 +5,7 @@ import logo from "../../image/logo.png"
 const Card = () => {
   return (
     <>
-      <div class="card" style={{width: "18rem"}}>
+      <div class="card text-center"  style={{width: "18rem", height: "20.2rem"}}>
       <div className="editandtrash">
             <div className="timer">
                 <i className='fas fa-edit card-icon'></i>
@@ -15,7 +15,7 @@ const Card = () => {
             </div>
 
           </div>
-        <img src={logo} class="card-img-top" alt="activities" />
+        <img src={logo} class="card-img-top img-custome" alt="activities" />
         <div class="card-body">
           <h5 class="card-title">Bi CycleRide</h5>
           <p class="card-text">

@@ -2,10 +2,11 @@ import React from "react";
 import Lottie from "lottie-react";
 import running from "../../image/running.json";
 import "./header.css";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      <header className="header-home">
+      <header className="header-home" id="header-home">
         <div class="container text-center">
           <div class="row d-flex justify-content-center align-items-center">
             <div class="col-md-7 col-sm-12  text-white">
@@ -19,9 +20,9 @@ const Header = () => {
                 or re-arranging them. The app fills in previous data and offers
                 a complete history.
               </p>
-              <button class="btn btn-success px-5 py-2 primary-btn">
+              <Link class="btn btn-success px-5 py-2 primary-btn" to="/signup">
                 Register Now
-              </button>
+              </Link>
             </div>
             <div className="col-md-5 col-sm-12  h-25">
               <Lottie animationData={running} />

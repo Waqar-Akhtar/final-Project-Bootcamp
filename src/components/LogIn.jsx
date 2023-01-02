@@ -1,16 +1,46 @@
 import React, { useState } from "react";
+import Navbar from './Navbar/Navbar';
+import { useSelector, useDispatch } from "react-redux";
 import {
   Link, useNavigate
 } from "react-router-dom"
 const LogIn = () => {
+  // const myState = useSelector((store)=> store.data)
+  const dispatch = useDispatch()
   const [email, setEmail]= useState()
-  const [password, setPassword]= useState()
+  const [Password, setPassword]= useState()
   const navigator = useNavigate()
-  const loginStatus = ()=>{
-    navigator('/dashboard')
-  }
+  const loginStatus = async ()=>{
+    const res = await fetch('/user/login',{
+      method: 'POST',
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        email, 
+        Password
+      })
+    })
+    const data = await res.json()
+    if(res.status === 403){
+      window.alert(data)
+     
+    }
+     else if(res.status === 410){
+      window.alert(data)
+    }else{
+      // console.log(data)
+      dispatch({type: "datadetails", payload: data})
+           navigator('/dashboard')
+          //  console.log(myState.data)
+    }
+
+    }
+  
+
   return (
     <>
+    <Navbar/>
       <section className="vh-100  " style={{backgroundColor: "#151515"}}>
         
         <div className="container-fluid text-white d-flex flex-column justify-content-center align-items-center h-100" >
@@ -24,7 +54,7 @@ const LogIn = () => {
               />
             </div>
             <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1" >
-              <form >
+              <form method="POST">
                 <div className="form-outline mb-4">
                 <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4"> Log In </p>
                 <label className="form-label" htmlFor="form3Example3">
@@ -49,7 +79,7 @@ const LogIn = () => {
                     type="password"
                     id="form3Example4"
                     className="form-control form-control-lg"
-                    value={password}
+                    value={Password}
                     placeholder="Enter password"
                     onChange={(e)=>setPassword(e.target.value)}
                   />

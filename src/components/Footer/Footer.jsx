@@ -9,7 +9,11 @@ const Footer = () => {
             <div className="col-md-5 col-sm-5">
               <h4 className="text-light">About us</h4>
               <p className="text-muted">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur cupiditate omnis autem ratione debitis dolorum ab quibusdam vel delectus porro similique eligendi, suscipit ut illum illo, quae odit beatae est nihil maxime laborum molestias quasi soluta? Reprehenderit, quibusdam! Rerum, eius?
+               <span>EDOT</span>  is a social welfare and nonprofitable organization working for
+               the well-being of people. We are providing our services to people to 
+               maintain their fitness by keeping track of their healthy activities and help
+                them plan their daily activities accordingly
+               to maintain a healthy lifestyle.
               </p>
               <p className="pt-4 text-muted">
                 Copyright ©2022 All rights reserved | MERN BootCamp 
