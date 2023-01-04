@@ -41,7 +41,7 @@ const Sidebar = (props) => {
             </div>
           </div>
 
-          <Link to='/home' className='nav-link'>
+          <Link to='/' className='nav-link'>
             <i className='fas fa-sign-out nav-link-icon'></i>
             <span className='nav-link-name'>Logout</span>
           </Link>

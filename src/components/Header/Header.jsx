@@ -7,9 +7,9 @@ const Header = () => {
   return (
     <>
       <header className="header-home" id="header-home">
-        <div class="container text-center">
-          <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-md-7 col-sm-12  text-white">
+        <div className="container text-center">
+          <div className="row d-flex justify-content-center align-items-center">
+            <div className="col-md-7 col-sm-12  text-white">
               <h1>Excercise Tracker</h1>
               <p>
                 Excersice Tracker offers easy ways to enter data, create
@@ -20,7 +20,7 @@ const Header = () => {
                 or re-arranging them. The app fills in previous data and offers
                 a complete history.
               </p>
-              <Link class="btn btn-success px-5 py-2 primary-btn" to="/signup">
+              <Link className="btn btn-success px-5 py-2 primary-btn" to="/signup">
                 Register Now
               </Link>
             </div>

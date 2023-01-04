@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../../image/logo.png"
 import profile from "../../image/profile.jpg"
 import uzair from "../../image/uzair.jpeg"
 import mehtab from "../../image/mehtab.jpeg"
@@ -30,7 +29,7 @@ const About = () => {
                 </p>
                 <p className="text-black-50">MERN Stack Developer</p>
                 <a href="https://www.linkedin.com/in/mehtab-khan-795b6a18b" target= "_blank"  className="text-secondary text-decoration-none">
-                <i class="fab fa-linkedin-in"></i>
+                <i className="fab fa-linkedin-in"></i>
                 </a>
               </div>
             </div>
@@ -52,7 +51,7 @@ const About = () => {
                 </p>
                 <p className="text-black-50">Full Stack Developer</p>
                 <a href="https://www.linkedin.com/in/engr-waqar-akhtar"  target= "_blank" className="text-secondary text-decoration-none">
-                <i class="fab fa-linkedin-in"></i>
+                <i className="fab fa-linkedin-in"></i>
                 </a>
               </div>
             </div>
@@ -74,7 +73,7 @@ const About = () => {
                 </p>
                 <p className="text-black-50">MERN Stack Developer</p>
                 <a href="https://www.linkedin.com/in/uzair-ullah-762273159" target= "_blank"  className="text-secondary text-decoration-none">
-                <i class="fab fa-linkedin-in"></i>
+                <i className="fab fa-linkedin-in"></i>
                 </a>
               </div>
             </div>

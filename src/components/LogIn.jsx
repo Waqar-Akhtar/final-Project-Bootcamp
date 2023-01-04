@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Navbar from './Navbar/Navbar';
-import { useSelector, useDispatch } from "react-redux";
+import {useDispatch } from "react-redux";
 import {
   Link, useNavigate
 } from "react-router-dom"
 const LogIn = () => {
-  // const myState = useSelector((store)=> store.data)
+
   const dispatch = useDispatch()
-  const [email, setEmail]= useState()
-  const [Password, setPassword]= useState()
+  const [email, setEmail]= useState("")
+  const [Password, setPassword]= useState("")
   const navigator = useNavigate()
   const loginStatus = async ()=>{
     const res = await fetch('/user/login',{
@@ -31,7 +31,7 @@ const LogIn = () => {
     }else{
       // console.log(data)
       dispatch({type: "datadetails", payload: data})
-           navigator('/dashboard')
+       navigator('/dashboard')
           //  console.log(myState.data)
     }
 
