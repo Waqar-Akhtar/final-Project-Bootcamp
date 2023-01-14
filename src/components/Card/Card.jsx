@@ -1,18 +1,32 @@
 import React from "react";
 import './card.css'
 import logo from "../../image/logo.png"
+import { useSelector } from "react-redux";
 
-// import {Link} from 'react-router-dom'
 const Card = (props) => {
+  const myState = useSelector((store)=> store.dataReducer.data)
+  const deleteActivity= async ()=>{
+        const res = await fetch(`/activities/delete/${props.data._id}`,{
+          method: 'DELETE',
+          headers: {
+            authorization: `Bearer ${myState.token}`
+        }
+      })
+      const resdata = await res.json()
+      console.log(resdata)
+    }
+
+    
+
   return (
     <>
       <div className="card text-center"  style={{width: "18rem", height: "20.2rem"}}>
       <div className="editandtrash">
             <div className="timer">
-                <i className='fas fa-edit card-icon' ></i>
+                <i className='fas fa-edit card-icon'></i>
             </div>
             <div className="timer">
-                <i className='fas fa-trash-alt card-icon'></i>
+                <i className='fas fa-trash-alt card-icon ' onClick={deleteActivity}></i>
             </div>
 
           </div>

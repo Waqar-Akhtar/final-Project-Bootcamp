@@ -4,7 +4,7 @@ import Button from '../../components/Button/Button'
 import Card from '../../components/Card/Card'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import './dashboard.css'
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Dashboard = () => {
   const [activitiesdata, setActivityData] = useState([ ])
@@ -18,15 +18,18 @@ const Dashboard = () => {
     })
     const data = await res.json()
     setActivityData(data.activities)
-    console.log(activitiesdata)
+    
   }
 
   useEffect(()=>{
     activitiesData()
-  },[show])
+  },[activitiesdata])
+
+
   const addactivitiesForm = ()=>{
     setShow(!show)
   }
+
   return (
     <>
     

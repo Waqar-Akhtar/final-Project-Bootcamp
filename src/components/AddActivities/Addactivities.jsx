@@ -9,12 +9,8 @@ const Addactivities = (props) => {
     const [description, setDescription] = useState()
     const [date, setDate] = useState()
     const [activity, setActivity] = useState("")
-
-    const navigator = useNavigate()
     const AddActivity= async (e)=>{
       e.preventDefault()
-      // console.log(props.tokenAuthorization)
-      // console.log("button clicked ")
       const res = await fetch('/activities/create',{
         method: 'POST',
         headers: {
@@ -29,9 +25,8 @@ const Addactivities = (props) => {
         })
         
       })
-      // const data = await res.json()
-      // console.log(data)
-    // navigator('/dashboard')
+      props.onclick()
+     
     }
   return (
     <>
